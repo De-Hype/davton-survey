@@ -1,22 +1,29 @@
- const questions = document.querySelectorAll('.question');
-    
-    questions.forEach((question, index) => {
-      const prevBtn = question.querySelector('.prev-btn');
-      const nextBtn = question.querySelector('.next-btn');
-  
-      prevBtn.addEventListener('click', function() {
-        if (index > 0) {
-          questions[index].classList.remove('active');
-          questions[index - 1].classList.add('active');
+document.addEventListener("DOMContentLoaded", function () {
+    const nextBtn = document.querySelector(".next-btn");
+    const prevBtn = document.querySelector(".prev-btn");
+    const questions = document.querySelector(".question");
+    let currentQuestionIndex = 0;
+    function showQuestion(index) {
+        questions.forEach((question, idx) =>{
+            if (idx===index) {
+                question.classList.add("active");
+                question.classList.remove("inactive");
+            } else{
+                question.classList.remove("active");
+                question.classList.add("inactive");
+            }
+        })
+    }
+    nextBtn.addEventListener("click", function () {
+        if (currentQuestionIndex < questions.length - 1 ) {
+            currentQuestionIndex++
+            showQuestion(currentQuestionIndex)
         }
-      });
-  
-      nextBtn.addEventListener('click', function() {
-        if (index < questions.length - 1) {
-          questions[index].classList.remove('active');
-          questions[index + 1].classList.add('active');
+    })
+    prevBtn.addEventListener("click", function () {
+        if (currentQuestionIndex > 0 ) {
+            currentQuestionIndex--;
+            showQuestion(currentQuestionIndex)
         }
-      });
-    });
-  
-  
+    })
+})
