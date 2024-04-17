@@ -1,29 +1,40 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const nextBtn = document.querySelector(".next-btn");
-    const prevBtn = document.querySelector(".prev-btn");
-    const questions = document.querySelector(".question");
-    let currentQuestionIndex = 0;
-    function showQuestion(index) {
-        questions.forEach((question, idx) =>{
-            if (idx===index) {
-                question.classList.add("active");
-                question.classList.remove("inactive");
-            } else{
-                question.classList.remove("active");
-                question.classList.add("inactive");
-            }
-        })
-    }
-    nextBtn.addEventListener("click", function () {
-        if (currentQuestionIndex < questions.length - 1 ) {
-            currentQuestionIndex++
-            showQuestion(currentQuestionIndex)
-        }
-    })
-    prevBtn.addEventListener("click", function () {
-        if (currentQuestionIndex > 0 ) {
-            currentQuestionIndex--;
-            showQuestion(currentQuestionIndex)
-        }
-    })
-})
+let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides((slideIndex += n));
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides((slideIndex = n));
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  let nextButton = document.getElementById('next-btn')
+  if(slideIndex == 8){
+    nextButton.innerText = "Submit"
+} else{
+    nextButton.innerText = "Next"
+}
+  
+  if (n > slides.length) {
+    slideIndex = 1;
+  }
+  if (n < 1) {
+    slideIndex = slides.length;
+  }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " active";
+  
+}
