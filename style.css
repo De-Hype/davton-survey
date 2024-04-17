@@ -10,7 +10,6 @@ body{
 }
 .body-tag{
     min-height: 100vh;
-    background: red;
     filter: blur(8px);
     --webkit-filter:blur(8px);
 }
