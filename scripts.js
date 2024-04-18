@@ -38,3 +38,15 @@ function showSlides(n) {
   dots[slideIndex - 1].className += " active";
   
 }
+
+function SelectOption(n) {
+  const button = document.getElementsByClassName("button");
+  
+  let clicked;
+  clicked = button[n];
+  for (let i = 0; i < button.length; i++) {
+    button[i].classList.remove("selected")
+  }
+  clicked.classList.add("selected")
+  
+}

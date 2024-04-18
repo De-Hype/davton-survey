@@ -35,8 +35,9 @@ body{
     border: 1px solid black; 
     border-radius: 10px;
     /* box-shadow: 3px 4px 10px 1px black; */
+    min-height: 350px;
     position: absolute; 
-    padding: 10px 20px;
+    padding: 15px 20px;
     width: 70%;
 }
 /* .question{
@@ -44,7 +45,8 @@ body{
 } */
 
 .questions{
-    min-height: 300px;
+    min-height: 350px;
+    /* height: 100%; */
     width: 100%;
     position: relative;
 }
@@ -67,7 +69,7 @@ body{
     padding:0 2rem;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.8rem;
 }
 
 .button-container{
@@ -78,7 +80,7 @@ body{
     width: 100%;
     align-items: center;
     justify-content: space-between;
-   margin: .8rem 0;
+   margin: .8rem 0 1.2rem 0;
 }
 .spread-content-length{
     display: flex;
@@ -100,14 +102,15 @@ body{
     justify-content: space-between;
 }
 .button{
-    background: #949494;
+    background: rgb(232, 233, 232);
     padding: 8px 14px;
     border: none;
     outline: none;
     border-radius: 5px;
 }
 .heading{
-    color: rgb(53, 237, 53);
+    margin-top: 1.3rem;
+    color: rgb(2, 125, 2);
     font-size: 1.7rem;
     font-weight: 800;
 }
@@ -129,19 +132,19 @@ body{
     
 }
 .prev-btn{
-    border: 1px solid rgb(53, 237, 53);
+    border: 1px solid rgb(2, 125, 2);
     border-radius: 5px;
         text-transform: uppercase;
-    color: rgb(53, 237, 53);
+    color: rgb(2, 125, 2);
     background: white;
     cursor: pointer;
 }
 .next-btn{
-    border: 1px solid rgb(53, 237, 53);
+    border: 1px solid rgb(2, 125, 2);
     border-radius: 5px;
     text-transform: uppercase;
     color: white;
-    background: rgb(53, 237, 53);
+    background: rgb(2, 125, 2);
     cursor: pointer;
 }
 
@@ -156,17 +159,17 @@ body{
   
   /* On hover, add a black background color with a little bit see-through */
   .prev:hover {
-    border: 1px solid rgb(53, 237, 53);
+    border: 1px solid rgb(2, 125, 2);
     border-radius: 5px;
     text-transform: uppercase;
     color: white;
-    background: rgb(53, 237, 53);
+    background: rgb(2, 125, 2);
   }
   .next:hover{
-    border: 1px solid rgb(53, 237, 53);
+    border: 1px solid rgb(2, 125, 2);
     border-radius: 5px;
         text-transform: uppercase;
-    color: rgb(53, 237, 53);
+    color: rgb(2, 125, 2);
     background: white;
   }
   
@@ -174,7 +177,7 @@ body{
   /* The dots/bullets/indicators */
   .dot {
     cursor: pointer;
-    height: 7px;
+    height: 5px;
     width: 100%;
     margin: 0 2px;
     background-color: #bbb;
@@ -183,7 +186,7 @@ body{
     transition: background-color 0.6s ease;
   }
   .dot-colored{
-    background-color:rgb(53, 237, 53) ;
+    background-color:rgb(2, 125, 2) ;
   }
   
   /* .active, .dot:hover {
@@ -231,3 +234,7 @@ body{
     border-radius: 5px;
     outline: none;
   }
+
+.selected{
+    background-color: rgb(185, 250, 185);
+}
